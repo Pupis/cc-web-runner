@@ -1,12 +1,13 @@
 package com.github.monai.entity;
 
-import com.owlike.genson.annotation.JsonProperty;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.ws.rs.core.Response;
 
 public class ErrorResponse extends AbstractResponse {
-  public final String message;
-  public final Throwable exception;
+  private final String message;
+  private final Throwable exception;
 
   public ErrorResponse(@JsonProperty("exception") Throwable ex,
                        boolean debug) {

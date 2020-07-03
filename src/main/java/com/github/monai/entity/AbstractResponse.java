@@ -1,16 +1,16 @@
 package com.github.monai.entity;
 
-import com.owlike.genson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class AbstractResponse {
-  public final StatusCode status;
+class AbstractResponse {
+  private final StatusCode status;
 
   public enum StatusCode {
     SUCCESS,
     ERROR
   }
 
-  public AbstractResponse(@JsonProperty("status") StatusCode status) {
+  AbstractResponse(@JsonProperty("status") StatusCode status) {
     this.status = status;
   }
 }
